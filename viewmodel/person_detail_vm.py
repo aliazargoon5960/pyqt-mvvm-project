@@ -68,16 +68,15 @@ class PersonDetailViewModel(QObject):
                 self.error.emit("Person not found")
                 return
 
-            # 👈 ذخیره id شخص
             self.person_id = person.id
 
-            # آپدیت state
+            
             self.code = person.code or ""
             self.name = person.name or ""
             self.family = person.family or ""
             self.is_active = bool(person.is_active)
 
-            # اطلاع به View
+            
             self.loaded.emit({
                 "code": self.code,
                 "name": self.name,
