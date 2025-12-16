@@ -33,7 +33,7 @@ class PersonDetailView(QDialog):
     def _connect_vm(self):
         self.vm.saved.connect(self.on_saved)
         self.vm.error.connect(self.on_error)
-        self.vm.loaded.connect(self.on_loaded)   # 👈 جدید
+        self.vm.loaded.connect(self.on_loaded)  
 
     def on_loaded(self, data):
         self.ui.lineEdit.setText(data["code"])
