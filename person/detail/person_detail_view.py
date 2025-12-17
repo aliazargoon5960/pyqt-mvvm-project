@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QDialog, QMessageBox
 from ui.person_detail_ui import Ui_Dialog
-from viewmodel.person_detail_vm import PersonDetailViewModel
+from person.detail.person_detail_vm import PersonDetailViewModel
 
 
 class PersonDetailView(QDialog):

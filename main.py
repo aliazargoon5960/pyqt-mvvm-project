@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication
-from views.person_list_view import PersonListView
+from person.list.person_list_view import PersonListView
 
 
 if __name__ == "__main__":

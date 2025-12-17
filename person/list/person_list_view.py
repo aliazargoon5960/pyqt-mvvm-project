@@ -3,8 +3,8 @@ from PyQt5.QtWidgets import (
     QPushButton, QMessageBox
 )
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
-from viewmodel.person_list_vm import PersonListViewModel
-from views.person_detail_view import PersonDetailView
+from person.list.person_list_vm import PersonListViewModel
+from person.detail.person_detail_view import PersonDetailView
 
 
 class PersonListView(QDialog):
