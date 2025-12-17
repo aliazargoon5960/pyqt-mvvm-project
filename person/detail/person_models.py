@@ -33,7 +33,7 @@ class PersonModel:
         db.commit()
 
     def load(self, db: Session):
-        stmt = select(Person).where(Person.id == self.id)
+        stmt = select(Person).where(Person.id == self.id)     
         person = db.execute(stmt).scalar_one_or_none()
 
         if not person:
