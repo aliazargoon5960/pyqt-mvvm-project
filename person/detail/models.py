@@ -9,5 +9,4 @@ class Person(Base):
     code = Column(String)
     name = Column(String)
     family = Column(String)
-    is_active = Column(Boolean)
-
+    is_active = Column(Boolean, default=True)

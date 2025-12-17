@@ -1,6 +1,6 @@
 from PyQt5.QtCore import QObject, pyqtSignal
 from database.database import SessionLocal
-from person.detail.models import Person
+from person.list.person_list_model import PersonListModel
 
 
 class PersonListViewModel(QObject):
@@ -9,21 +9,9 @@ class PersonListViewModel(QObject):
 
     def load_persons(self):
         try:
-            session = SessionLocal()
-            persons = session.query(Person).all()
-            session.close()
-
-            result = []
-            for p in persons:
-                result.append({
-                    "id": p.id,
-                    "code": p.code,
-                    "name": p.name,
-                    "family": p.family,
-                    "is_active": p.is_active
-                })
-
-            self.data_loaded.emit(result)
-
+            db = SessionLocal()
+            data = PersonListModel.get_all(db)
+            db.close()
+            self.data_loaded.emit(data)
         except Exception as e:
             self.error.emit(str(e))
